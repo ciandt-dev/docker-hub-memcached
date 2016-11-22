@@ -1,0 +1,3 @@
+# ignore all configuration files except local
+conf/*
+!conf/memcached.local.env
