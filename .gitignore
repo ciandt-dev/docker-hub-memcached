@@ -1,3 +1,6 @@
-# ignore all configuration files except local
-conf/*
-!conf/memcached.local.env
+# ignore all files except documentation and gitignore
+*
+!.gitignore
+!LICENSE
+!MAINTAINERS.txt
+!README.md
