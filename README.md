@@ -112,7 +112,7 @@ make clean-all
 make all
 ```
 
-Or simply
+<sub>*or simply*</sub>
 
 ```
 make
