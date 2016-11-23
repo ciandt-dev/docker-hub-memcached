@@ -122,7 +122,7 @@ make
 
 ## [Deep diving](#deep-dive)
 
-### [.env file](#env)
+### [*.env file*](#env)
 
 As this little framework was designed to be re-utilized on other Docker images, it contains a __.env__ file provided at repository root. This file has some self-described variables, and they are used by all scripts to perform its own tasks, just inspect the .env file to check them.
 
@@ -144,21 +144,21 @@ This is an easy way to inject variables when developing a new script and when te
 
 * * *
 
-### [Build process](#build-process)
+### [*Build process*](#build-process)
 
 This process will execute instructions in Dockerfile that is inside __app__ folder.
 Dockerfile will have several environment variables for the __build__ step, if you need to modify them, please look for any line starting with __ENV__. More information about Docker ENV (environment variables) is available at this [link](https://docs.docker.com/engine/reference/builder/#/env).
 
 * * *
 
-### [Run process](#run-process)
+### [*Run process*](#run-process)
 
 As described in .env section, run will load environment variables from an env file.
 This approach is better describe in official Docker docs in the [link](https://docs.docker.com/compose/env-file/).
 
 * * *
 
-### [Debug and Shell access](#debug-shell)
+### [*Debug and Shell access*](#debug-shell)
 
 In case there is a need of debuging or inspecting inside the container there are two options to help:
 
@@ -178,7 +178,7 @@ Second one runs the container and connects to its shell (bash). So, you can insp
 
 * * *
 
-### [Testing](#testing)
+### [*Testing*](#testing)
 
 After any modification we strongly recommend to run tests against the container to check if everything is running smoothly.
 This can be done with the command:
@@ -191,7 +191,7 @@ These are simple tests at the moment, therefore, very usefull.
 
 * * *
 
-### [All steps](#all-steps)
+### [*All steps*](#all-steps)
 
 Now that you __already__ __read__ the previous steps, you are aware of each function. Having said that, the easisest way of wrapping up everything together is to just run:
 
@@ -207,7 +207,7 @@ make all
 
 This command will __build__, __run__ and __test__ your recently created container.
 
-### [Cleaning up](#cleaning-up)
+### [*Cleaning up*](#cleaning-up)
 
 Since Docker generates tons of layers that can fast outgrow your hard drive, after that you have finished any modification, we encourage to clean up your environment.
 
@@ -238,19 +238,19 @@ More information about dangling can be found at this [link](https://docs.docker.
 
 ## [User Feedback](#user-feedback)
 
-### [Issues](#issues)
+### [*Issues*](#issues)
 
 If you have problems, bugs, issues with or questions about this, please reach us in [Github issues page](https://github.com/ciandt-dev/docker-hub-memcached/issues).
 
 __Needless to say__, please do a litle research before posting.
 
-### [Contributing](#contributing)
+### [*Contributing*](#contributing)
 
 We gladly invite you to contribute fixes, new features, or updates, large or small; we are always thrilled to receive pull requests, and do our best to process them as fast as we can.
 
 Before you start to code, we recommend discussing your plans through a GitHub issue, especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
 
-### [Documentation](#documentation)
+### [*Documentation*](#documentation)
 
 There are __two parts__ of the documentation.
 
