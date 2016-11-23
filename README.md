@@ -1,41 +1,37 @@
-## CI&T Acquia Memcached mimic Docker base image
+# CI&T Memcached Docker image(s)
 
-This is the source code of [CI&T Acquia Memcached Docker image](https://hub.docker.com/r/ciandtsoftware/memcached/) hosted at [Docker hub](https://hub.docker.com/).
+This is the source code of [CI&T Memcached Docker image(s)](https://hub.docker.com/r/ciandtsoftware/memcached/) hosted at [Docker hub](https://hub.docker.com/).
 
-It contents the source code for building the publicly accessible Docker image and some scripts to easy maintain and update its code.
+It contents the source code for building the publicly accessible Docker image(s) and some scripts to easy maintain and update its code.
 
-Our intent is to have a Docker container that mimics Acquia Memcached environment with the same version of softwares and OS.
+By utilizing Docker technologies, that already provides an easy way of spinning up new environments along with its dependecies. This image can speed up developers which different backgrounds and equipments to create quickly a new local environment allowing them to easily integrate in automated tests and deployment pipelines.
 
-Utilizing Docker technologies that already provides an easy way of spinning up new environments and its dependecies, this image can speed-up developers which different backgrounds and equipments to have a fast local environment allowing them to easily integrate in automated tests and deployment pipelines.
+At this moment we have the following versions:
 
-Keeping it short, this image contains a working set of Ubuntu and Apache Memcached.
+## [Acquia](#acquia)
 
-* * *
+Our intent is to be a Docker container that mimics Memcached running on Acquia environment with the same version of softwares, packages, modules and its underlying operating system.
 
-## [*Quick Start*](#quickstart)
+Acquia publishes a table with its platform infrastructure information on the link: https://docs.acquia.com/cloud/arch/tech-platform
 
-__Clone the project code__
+These images will have the following name pattern: __acquia-*YYYY-MM-DD*__
 
-```
-git clone https://bitbucket.org/ciandt_it/docker-hub-memcached.git
-```
+### [*Bundled software versions*](#software-versions)
 
-__Checkout the latest tag__
+These are the currently software versions bundled in the image(s) by tag.
 
-```
-git checkout acquia-2016-11-08
-```
+* acquia-2016-11-08
+  * Ubuntu 12.04.5
+  * Memcached 1.4.13
+  * Dumb-init 1.2.0
 
-__Build__
-
-```
-make
-```
 * * *
 
 ## [*Requirements*](#requirements)
 
-Before proceeding please check the required packages below:
+Since Docker at the moment was designed to run natively just on __Linux__, we do consider this as __premisse__.
+
+And also, before proceeding please check the __required__ packages below:
 
  - docker engine => 1.12
  - make
@@ -44,58 +40,127 @@ Before proceeding please check the required packages below:
 
 * * *
 
-## [Software Versions](#software-versions)
+## [*Quick Start*](#quickstart)
 
-These are the currently versions bundled in this image.
+__Clone the project code desired version__
 
-Already installed
+```
+DESIRED_VERSION="acquia-2016-11-08"
 
-* Ubuntu 12.04.5
-* Memcached 1.4.13
-* Dumb-init 1.2.0
+git clone \
+  --branch "${DESIRED_VERSION}" \
+  git@github.com:ciandt-dev/docker-hub-memcached.git
+```
+
+__Build, run and test__
+
+```
+make
+```
 
 * * *
 
-## [Build process](#build-process)
+## [*How-to*](#how-to)
 
-There are some required environment variables that are already pre-defined in Dockerfile to specify software versions for the build step, if you need to modify them, please look for any line starting with __ENV__.
+It is possible to perform any of the actions described below:
 
-More information about ENV is available at this [link](https://docs.docker.com/engine/reference/builder/#/env).
+### [Build](#how-to-build)
+
+```
+make build
+```
+
+### [Run](#how-to-run)
+
+```
+make run
+```
+
+### [Test](#how-to-test)
+
+```
+make test
+```
+
+### [Debug](#how-to-debug)
+
+```
+make debug
+```
+
+### [Shell access](#how-to-shell)
+
+```
+make shell
+```
+
+### [Clean](#how-to-clean)
+
+```
+make clean
+```
+
+### [Clean All](#how-to-clean-all)
+
+```
+make clean-all
+```
+
+### [All - Build / Run / Test](#how-to-all)
+
+```
+make all
+```
+
+Or simply
+
+```
+make
+```
 
 * * *
 
-## [.env](#env)
+## [Deep diving](#deep-dive)
 
-Thinking in a multi-stage environment, a file name __.env__ is provided at repository root and it is used to define which set of ENV variables are going to load-up during Docker run.
+### [.env file](#env)
 
-Default value is:
+As this little framework was designed to be re-utilized on other Docker images, it contains a __.env__ file provided at repository root. This file has some self-described variables, and they are used by all scripts to perform its own tasks, just inspect the .env file to check them.
 
-> __ENVIRONMENT="local"__
+The only one that is important to mention is:
 
-It is possible to change to any desired string value. This is just an ordinary alias to load one of configuration files that can exist in __conf__ folder.
+> __ENVIRONMENT__
+
+Environment default value is always __local__. It is possible to change to any desired string value, this is just an ordinary alias to load one of the configuration files that can exist in __conf__ folder.
 
 Example, if you change it to:
 
 > ENVIRONMENT="__dev__"
 
-When you run the container it will load variables from:
+When you __run__ (*not build*) the container it will load variables from:
 
-> conf/memcached.__dev__.env
+> conf/$APP_NAME.__dev__.env
 
-It is an easy way to inject new variables when developing a new script.
+This is an easy way to inject variables when developing a new script and when testing multi-environment solution.
 
 * * *
 
-## [Run process](#run-process)
+### [Build process](#build-process)
 
-As described in .env section, run will load environment variables from a file.
+This process will execute instructions in Dockerfile that is inside __app__ folder.
+Dockerfile will have several environment variables for the __build__ step, if you need to modify them, please look for any line starting with __ENV__. More information about Docker ENV (environment variables) is available at this [link](https://docs.docker.com/engine/reference/builder/#/env).
+
+* * *
+
+### [Run process](#run-process)
+
+As described in .env section, run will load environment variables from an env file.
 This approach is better describe in official Docker docs in the [link](https://docs.docker.com/compose/env-file/).
 
 * * *
 
-## [Debug and Shell access](#debug-shell)
+### [Debug and Shell access](#debug-shell)
 
-Case there is a need of debug or inspect inside the container there are two options to help:
+In case there is a need of debuging or inspecting inside the container there are two options to help:
 
 > make debug
 
@@ -105,22 +170,22 @@ and
 
 The first one runs the container and attaches __stderr__ and __stdout__ to current terminal and prints relevant information.
 
-Second one runs the container and connects to its shell (bash) with root access. So, you can inspect files, configurations and the whole container environment.
+Second one runs the container and connects to its shell (bash). So, you can inspect files, configurations and the whole container environment.
 
 * * *
 
-## [Testing](#testing)
+### [Testing](#testing)
 
 After any modification we strongly recommend to run tests against the container to check if everything is running smoothly.
 This can be done with the command:
 
-> make tests
+> make test
 
 These are simple tests at the moment, therefore, very usefull.
 
 * * *
 
-## [All steps](#all-steps)
+### [All steps](#all-steps)
 
 Now that you __already__ __read__ the previous steps, you are aware of each function. Having said that, the easisest way of wrapping up everything together is to just run:
 
@@ -132,7 +197,7 @@ or
 
 This command will __build__, __run__ and __test__ your recently created container.
 
-## [Cleaning up](#cleaning-up)
+### [Cleaning up](#cleaning-up)
 
 Since Docker generates tons of layers that can fast outgrow your hard drive, after that you have finished any modification, we encourage to clean up your environment.
 
@@ -155,69 +220,29 @@ More information about dangling can be found at this [link](https://docs.docker.
 
 * * *
 
-## [How-to](#how-to)
+## [User Feedback](#user-feedback)
 
-There is a Makefile in the root of the repository with all actions that can be performed.
+### [Issues](#issues)
 
-#### [Build](#how-to-build)
+If you have problems, bugs, issues with or questions about this, please reach us in [Github issues page](https://github.com/ciandt-dev/docker-hub-memcached/issues).
 
-```
-make build
-```
+__Needless to say__, please do a litle research before posting.
 
-#### [Run](#how-to-run)
+### [Contributing](#contributing)
 
-```
-make run
-```
+We gladly invite you to contribute fixes, new features, or updates, large or small; we are always thrilled to receive pull requests, and do our best to process them as fast as we can.
 
-#### [Test](#how-to-test)
+Before you start to code, we recommend discussing your plans through a GitHub issue, especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
 
-```
-make test
-```
+### [Documentation](#documentation)
 
-#### [Debug](#how-to-debug)
+There are __two parts__ of the documentation.
 
-```
-make debug
-```
+First, in the master branch, is this README.MD. It explains how this little scripts framework work and it is published on [Github page](https://github.com/ciandt-dev/docker-hub-memcached).
 
-#### [Shell access](#how-to-shell)
+Second, in each image version there is an additional README.MD file that explains how to use that specific Docker image version itself.
 
-```
-make shell
-```
-
-#### [Clean](#how-to-clean)
-
-```
-make clean
-```
-
-#### [Clean All](#how-to-clean-all)
-
-```
-make clean-all
-```
-
-#### [All - Build / Run / Test](#how-to-all)
-
-```
-make all
-```
-
-Or simply
-
-```
-make
-```
-
-* * *
-
-## [More](#more)
-
-Furthermore, there is an additional documentation at our Docker Hub page at https://hub.docker.com/r/ciandtsoftware/acquia/ .
+The *latest version* is always the one see on [Docker Hub page](https://hub.docker.com/r/ciandtsoftware/memcached).
 
 We strongly encourage reading it too!
 
