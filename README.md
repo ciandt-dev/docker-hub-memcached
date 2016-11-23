@@ -162,11 +162,15 @@ This approach is better describe in official Docker docs in the [link](https://d
 
 In case there is a need of debuging or inspecting inside the container there are two options to help:
 
-> make debug
+```
+make debug
+```
 
 and
 
-> make shell
+```
+make shell
+```
 
 The first one runs the container and attaches __stderr__ and __stdout__ to current terminal and prints relevant information.
 
@@ -179,7 +183,9 @@ Second one runs the container and connects to its shell (bash). So, you can insp
 After any modification we strongly recommend to run tests against the container to check if everything is running smoothly.
 This can be done with the command:
 
-> make test
+```
+make test
+```
 
 These are simple tests at the moment, therefore, very usefull.
 
@@ -189,11 +195,15 @@ These are simple tests at the moment, therefore, very usefull.
 
 Now that you __already__ __read__ the previous steps, you are aware of each function. Having said that, the easisest way of wrapping up everything together is to just run:
 
-> make
+```
+make
+```
 
 or
 
-> make all
+```
+make all
+```
 
 This command will __build__, __run__ and __test__ your recently created container.
 
@@ -203,17 +213,23 @@ Since Docker generates tons of layers that can fast outgrow your hard drive, aft
 
 There are two commands for this task:
 
-> make clean
+```
+make clean
+```
 
 That stops the running container, removes it and deletes its Docker image.
 This particular one is very usefull when you are performing cjanges and you need to rebuild your container to check for modifications.
 In addition, you can combine with __make shell__ for instance, like in this example:
 
-> make clean && make shell
+```
+make clean && make shell
+```
 
 And the second one is:
 
-> make clean-all
+```
+make clean-all
+```
 
 Actually, this one calls __make clean__ and then removes Docker dangling images and volumes.
 More information about dangling can be found at this [link](https://docs.docker.com/engine/reference/commandline/images/).
