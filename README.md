@@ -6,7 +6,7 @@ It contents the source code for building the publicly accessible Docker image(s)
 
 By utilizing Docker technologies, that already provides an easy way of spinning up new environments along with its dependecies. This image can speed up developers which different backgrounds and equipments to create quickly a new local environment allowing them to easily integrate in automated tests and deployment pipelines.
 
-At this moment we have the following versions:
+At this moment we have the following version(s)
 
 ## [Acquia](#acquia)
 
@@ -16,7 +16,7 @@ Acquia publishes a table with its platform infrastructure information on the lin
 
 These images will have the following name pattern: __acquia-*YYYY-MM-DD*__
 
-### [*Bundled software versions*](#software-versions)
+#### [*Bundled software versions*](#software-versions)
 
 These are the currently software versions bundled in the image(s) by tag.
 
@@ -27,7 +27,7 @@ These are the currently software versions bundled in the image(s) by tag.
 
 * * *
 
-## [*Requirements*](#requirements)
+# [*Requirements*](#requirements)
 
 Since Docker at the moment was designed to run natively just on __Linux__, we do consider this as __premisse__.
 
@@ -40,7 +40,7 @@ And also, before proceeding please check the __required__ packages below:
 
 * * *
 
-## [*Quick Start*](#quickstart)
+# [*Quick Start*](#quickstart)
 
 __Clone the project code desired version__
 
@@ -256,9 +256,7 @@ There are __two parts__ of the documentation.
 
 First, in the master branch, is this README.MD. It explains how this little scripts framework work and it is published on [Github page](https://github.com/ciandt-dev/docker-hub-memcached).
 
-Second, in each image version there is an additional README.MD file that explains how to use that specific Docker image version itself.
-
-The *latest version* is always the one see on [Docker Hub page](https://hub.docker.com/r/ciandtsoftware/memcached).
+Second, in each image version there is an additional README.MD file that explains how to use that specific Docker image version itself. __*Latest version*__ is always the one see on [Docker Hub page](https://hub.docker.com/r/ciandtsoftware/memcached).
 
 We strongly encourage reading it too!
 
