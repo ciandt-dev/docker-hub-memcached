@@ -42,7 +42,7 @@ And also, before proceeding please check the __required__ packages below:
 
 # [*Quick Start*](#quickstart)
 
-__Clone the project code desired version__
+__Clone the desired project code version__
 
 ```
 DESIRED_VERSION="acquia-2016-11-08"
