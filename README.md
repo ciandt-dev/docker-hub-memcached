@@ -27,7 +27,7 @@ These are the currently software versions bundled in the image(s) by tag.
 
 * * *
 
-# [*Requirements*](#requirements)
+# [Requirements](#requirements)
 
 Since Docker at the moment was designed to run natively just on __Linux__, we do consider this as __premisse__.
 
@@ -40,9 +40,9 @@ And also, before proceeding please check the __required__ packages below:
 
 * * *
 
-# [*Quick Start*](#quickstart)
+# [Quick Start](#quickstart)
 
-__Clone the desired project code version__
+__*Clone the desired project code version*__
 
 ```
 DESIRED_VERSION="acquia-2016-11-08"
@@ -52,7 +52,7 @@ git clone \
   git@github.com:ciandt-dev/docker-hub-memcached.git
 ```
 
-__Build, run and test__
+__*Build, run and test*__
 
 ```
 make
