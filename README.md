@@ -60,53 +60,53 @@ make
 
 * * *
 
-## [*How-to*](#how-to)
+## [How-to](#how-to)
 
 It is possible to perform any of the actions described below:
 
-### [Build](#how-to-build)
+### [*Build*](#how-to-build)
 
 ```
 make build
 ```
 
-### [Run](#how-to-run)
+### [*Run*](#how-to-run)
 
 ```
 make run
 ```
 
-### [Test](#how-to-test)
+### [*Test*](#how-to-test)
 
 ```
 make test
 ```
 
-### [Debug](#how-to-debug)
+### [*Debug*](#how-to-debug)
 
 ```
 make debug
 ```
 
-### [Shell access](#how-to-shell)
+### [*Shell access*](#how-to-shell)
 
 ```
 make shell
 ```
 
-### [Clean](#how-to-clean)
+### [*Clean*](#how-to-clean)
 
 ```
 make clean
 ```
 
-### [Clean All](#how-to-clean-all)
+### [*Clean All*](#how-to-clean-all)
 
 ```
 make clean-all
 ```
 
-### [All - Build / Run / Test](#how-to-all)
+### [*All - Build / Run / Test*](#how-to-all)
 
 ```
 make all
