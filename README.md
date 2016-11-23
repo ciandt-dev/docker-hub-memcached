@@ -124,7 +124,7 @@ make
 
 ### [*.env file*](#env)
 
-As this little framework was designed to be re-utilized on other Docker images, it contains a __.env__ file provided at repository root. This file has some self-described variables, and they are used by all scripts to perform its own tasks, just inspect the .env file to check them.
+As this little framework was designed to be re-utilized on other Docker images it contains a __.env__ file provided at repository root. This file has some self-described variables and they are used by all scripts to perform its own tasks, just inspect the .env file to check them out.
 
 The only one that is important to mention is:
 
@@ -136,31 +136,31 @@ Example, if you change it to:
 
 > ENVIRONMENT="__dev__"
 
-When you __run__ (*not build*) the container it will load variables from:
+When you __run__ (*not build*) the container will load variables from:
 
-> conf/$APP_NAME.__dev__.env
+> conf/*$APP_NAME*.__dev__.env
 
-This is an easy way to inject variables when developing a new script and when testing multi-environment solution.
+This is an easy way to inject variables when developing a new script and testing multi-environment solution.
 
 * * *
 
 ### [*Build process*](#build-process)
 
 This process will execute instructions in Dockerfile that is inside __app__ folder.
-Dockerfile will have several environment variables for the __build__ step, if you need to modify them, please look for any line starting with __ENV__. More information about Docker ENV (environment variables) is available at this [link](https://docs.docker.com/engine/reference/builder/#/env).
+Dockerfile will have several environment variables for the __build__ step, when you need to modify them please look for any line starting with __ENV__. More information about Dockerfile ENV (environment variables) is available at this [link](https://docs.docker.com/engine/reference/builder/#/env).
 
 * * *
 
 ### [*Run process*](#run-process)
 
-As described in .env section, run will load environment variables from an env file.
+As described in <a name="env">.env file</a> section, run will load environment variables from an existing file inside __conf folder__.
 This approach is better describe in official Docker docs in the [link](https://docs.docker.com/compose/env-file/).
 
 * * *
 
 ### [*Debug and Shell access*](#debug-shell)
 
-In case there is a need of debuging or inspecting inside the container there are two options to help:
+Wheter there is a need of __debuging__ or __inspecting__ inside the container there are two options to help:
 
 ```
 make debug
@@ -172,7 +172,7 @@ and
 make shell
 ```
 
-The first one runs the container and attaches __stderr__ and __stdout__ to current terminal and prints relevant information.
+The first one runs the container and attaches __*stderr*__ and __*stdout*__ to current terminal and prints relevant information.
 
 Second one runs the container and connects to its shell (bash). So, you can inspect files, configurations and the whole container environment.
 
@@ -181,6 +181,7 @@ Second one runs the container and connects to its shell (bash). So, you can insp
 ### [*Testing*](#testing)
 
 After any modification we strongly recommend to run tests against the container to check if everything is running smoothly.
+
 This can be done with the command:
 
 ```
@@ -193,23 +194,17 @@ These are simple tests at the moment, therefore, very usefull.
 
 ### [*All steps*](#all-steps)
 
-Now that you __already__ __read__ the previous steps, you are aware of each function. Having said that, the easisest way of wrapping up everything together is to just run:
+Now that you __already__ __read__ the previous steps, you are aware of each function. Knowing that, the easisest way of wrapping up everything together is to just run:
 
 ```
 make
-```
-
-or
-
-```
-make all
 ```
 
 This command will __build__, __run__ and __test__ your recently created container.
 
 ### [*Cleaning up*](#cleaning-up)
 
-Since Docker generates tons of layers that can fast outgrow your hard drive, after that you have finished any modification, we encourage to clean up your environment.
+Since Docker generates tons of layers that can fast outgrow your hard drive. After that you have finished any modification we encourage to clean up your environment.
 
 There are two commands for this task:
 
@@ -217,8 +212,8 @@ There are two commands for this task:
 make clean
 ```
 
-That stops the running container, removes it and deletes its Docker image.
-This particular one is very usefull when you are performing cjanges and you need to rebuild your container to check for modifications.
+It stops the running container, removes it and deletes its Docker image.
+This particular one is very usefull when you are performing changes and you need to rebuild your container many times to check for modifications.
 In addition, you can combine with __make shell__ for instance, like in this example:
 
 ```
@@ -231,8 +226,8 @@ And the second one is:
 make clean-all
 ```
 
-Actually, this one calls __make clean__ and then removes Docker dangling images and volumes.
-More information about dangling can be found at this [link](https://docs.docker.com/engine/reference/commandline/images/).
+Actually, this one calls __make clean__ first, and then removes Docker __dangling images and volumes__.
+More information about dangling images/volumes can be found at this [link](https://docs.docker.com/engine/reference/commandline/images/).
 
 * * *
 
