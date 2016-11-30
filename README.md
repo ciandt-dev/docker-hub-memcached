@@ -20,7 +20,14 @@ These images will have the following name pattern: __acquia-*YYYY-MM-DD*__
 
 These are the currently software versions bundled in the image(s) by tag.
 
-* acquia-2016-11-08 (latest)
+* acquia-latest __OR__ acquia-2016-11-30
+  * Ubuntu 12.04.5
+  * Memcached 1.4.13
+  * Dumb-init 1.2.0
+
+__*Deprecated*__
+
+* acquia-2016-11-08
   * Ubuntu 12.04.5
   * Memcached 1.4.13
   * Dumb-init 1.2.0
