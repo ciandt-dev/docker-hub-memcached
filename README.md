@@ -32,7 +32,7 @@ __*Deprecated*__
   * Memcached 1.4.13
   * Dumb-init 1.2.0
 
-# [Quick Start](#quickstart)
+## [Quick Start](#quickstart)
 
 __*Download the image*__
 
@@ -57,7 +57,7 @@ docker ps --all
 
 * * *
 
-# [Running standalone](#running-standalone)
+## [Running standalone](#running-standalone)
 
 If you just need the container there is a snippet that can help running in standalone mode.
 
@@ -90,7 +90,7 @@ Apache Memcached stats result should be returned perfectly.
 
 * * *
 
-# [Running in Docker-Compose](#running-docker-compose)
+## [Running in Docker-Compose](#running-docker-compose)
 
 Since a project is not going to use solely this container, it may need a Docker-Compose file.
 
