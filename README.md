@@ -20,7 +20,7 @@ These images will have the following name pattern: __acquia-*YYYY-MM-DD*__
 
 These are the currently software versions bundled in the image(s) by tag.
 
-* acquia-2016-11-08
+* acquia-2016-11-08 (latest)
   * Ubuntu 12.04.5
   * Memcached 1.4.13
   * Dumb-init 1.2.0
@@ -45,7 +45,7 @@ And also, before proceeding please check the __required__ packages below:
 __*Clone the desired project code version*__
 
 ```
-DESIRED_VERSION="acquia-2016-11-08"
+DESIRED_VERSION="acquia-latest"
 
 git clone \
   --branch "${DESIRED_VERSION}" \
