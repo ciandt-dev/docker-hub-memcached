@@ -260,3 +260,5 @@ We strongly encourage reading it too!
 Happy coding, enjoy!!
 
 "We develop people before we develop software" - Cesar Gon, CEO
+
+* * *
