@@ -16,7 +16,7 @@ Acquia publishes a table with its platform infrastructure information on the lin
 
 These images will have the following name pattern: __acquia-*YYYY-MM-DD*__
 
-# [*Bundled software versions*](#software-versions)
+#### [*Bundled software versions*](#software-versions)
 
 These are the currently software versions bundled in the image(s) by tag.
 
