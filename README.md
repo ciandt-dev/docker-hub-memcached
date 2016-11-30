@@ -15,7 +15,7 @@ Keeping it short, this image contains the same working set of Ubuntu and Apache 
 __Download the image__
 
 ```
-docker pull ciandtsoftware/memcached:acquia-2016-11-08
+docker pull ciandtsoftware/memcached:acquia-latest
 ```
 
 __Run a container__
@@ -24,7 +24,7 @@ __Run a container__
 docker run \
   --name myContainer \
   --detach \
-  ciandtsoftware/memcached:acquia-2016-11-08
+  ciandtsoftware/memcached:acquia-latest
 ```
 
 __Check running containers__
@@ -54,7 +54,7 @@ If you just need the container there is a snippet that can help running in stand
 ```
 # define variables
 DOCKER_CONTAINER_NAME="myContainer"
-DOCKER_IMAGE="memcached:acquia-2016-11-08"
+DOCKER_IMAGE="memcached:acquia-latest"
 
 # run your container
 docker run \
@@ -109,7 +109,7 @@ VIRTUAL_PORT=11211
 
 ```
 memcached:
-  image: ciandtsoftware/memcached:acquia-2016-11-08
+  image: ciandtsoftware/memcached:acquia-latest
   container_name: memcached
   env_file: ../conf/memcached.local.env
 
