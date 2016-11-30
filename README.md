@@ -164,16 +164,32 @@ Your project now have Memcached, Apache/PHP and Nginx up and running.
 
 * * *
 
-### [Contributing](#contributing)
+## [User Feedback](#user-feedback)
 
-If you want to contribute, suggest improvements and report issues, please go to our [Bitbucket repository](https://bitbucket.org/ipinatti_cit/docker-hub-memcached).
+### [*Issues*](#issues)
+
+If you have problems, bugs, issues with or questions about this, please reach us in [Github issues page](https://github.com/ciandt-dev/docker-hub-memcached/issues).
+
+__Needless to say__, please do a little research before posting.
+
+### [*Contributing*](#contributing)
+
+We gladly invite you to contribute fixes, new features, or updates, large or small; we are always thrilled to receive pull requests, and do our best to process them as fast as we can.
+
+Before you start to code, we recommend discussing your plans through a GitHub issue, especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
+
+### [*Documentation*](#documentation)
+
+There are __two parts__ of the documentation.
+
+First, in the master branch, is this README.MD. It explains how this little scripts framework work and it is published on [Github page](https://github.com/ciandt-dev/docker-hub-memcached).
+
+Second, in each image version there is an additional README.MD file that explains how to use that specific Docker image version itself. __*Latest version*__ is always the one seen on [Docker Hub page](https://hub.docker.com/r/ciandtsoftware/memcached).
+
+We strongly encourage reading it too!
 
 * * *
-
-Please feel free to drop a message in the comments section.
 
 Happy coding, enjoy!!
 
 "We develop people before we develop software" - Cesar Gon, CEO
-
-* * *
