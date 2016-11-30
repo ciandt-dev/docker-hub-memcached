@@ -1,4 +1,4 @@
-#### CI&T Memcached Docker image(s)
+# CI&T Memcached Docker image(s)
 
 These Docker image(s) intends to be a containerized Memcached solution for multiple purposes.
 
@@ -8,7 +8,7 @@ By utilizing Docker technologies, that already provides an easy way of spinning 
 
 At this moment we have the following version(s).
 
-### [Acquia](#acquia)
+# [Acquia](#acquia)
 
 Our intent is to be a Docker container that mimics Memcached running on Acquia environment with the same version of softwares, packages, modules and its underlying operating system.
 
