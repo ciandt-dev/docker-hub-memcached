@@ -1,14 +1,36 @@
-### CI&T Acquia Memcached mimic Docker base image
+# CI&T Memcached Docker image(s)
 
-This Docker image intends to be containerized mimic solution of Acquia Memcached environment.
+These Docker image(s) intends to be a containerized Memcached solution for multiple purposes.
 
-The source code is available under GPLv3 at Bitbucket in this [link](https://bitbucket.org/ciandt_it/docker-hub-memcached).
+The source code is available under GPLv3 at Github in this [link]((https://github.com/ciandt-dev/docker-hub-memcached).
 
-Our intent is to have a Docker container that mimics Acquia Memcached environment with the same version of softwares and OS.
+By utilizing Docker technologies, that already provides an easy way of spinning up new environments along with its dependecies. This image can speed up developers which different backgrounds and equipments to create quickly a new local environment allowing them to easily integrate in automated tests and deployment pipelines.
 
-Utilizing Docker technologies that already provides an easy way of spinning up new environments and its dependecies, this image can speed-up developers which different backgrounds and equipments to have a fast local environment allowing them to easily integrate in automated tests and deployment pipelines.
+At this moment we have the following version(s).
 
-Keeping it short, this image contains the same working set of Ubuntu and Apache Memcached Acquia utilizes.
+## [Acquia](#acquia)
+
+Our intent is to be a Docker container that mimics Memcached running on Acquia environment with the same version of softwares, packages, modules and its underlying operating system.
+
+Acquia publishes a table with its platform infrastructure information on the link: https://docs.acquia.com/cloud/arch/tech-platform
+
+These images will have the following name pattern: __acquia-*YYYY-MM-DD*__
+
+#### [*Bundled software versions*](#software-versions)
+
+These are the currently software versions bundled in the image(s) by tag.
+
+* acquia-latest __OR__ acquia-2016-11-30
+  * Ubuntu 12.04.5
+  * Memcached 1.4.13
+  * Dumb-init 1.2.0
+
+__*Deprecated*__
+
+* acquia-2016-11-08
+  * Ubuntu 12.04.5
+  * Memcached 1.4.13
+  * Dumb-init 1.2.0
 
 ### [*Quick Start*](#quickstart)
 
