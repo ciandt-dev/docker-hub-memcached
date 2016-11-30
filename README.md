@@ -16,7 +16,7 @@ Acquia publishes a table with its platform infrastructure information on the lin
 
 These images will have the following name pattern: __acquia-*YYYY-MM-DD*__
 
-#### [*Bundled software versions*](#software-versions)
+### [*Bundled software versions*](#software-versions)
 
 These are the currently software versions bundled in the image(s) by tag.
 
@@ -32,15 +32,15 @@ __*Deprecated*__
   * Memcached 1.4.13
   * Dumb-init 1.2.0
 
-### [*Quick Start*](#quickstart)
+# [Quick Start](#quickstart)
 
-__Download the image__
+__*Download the image*__
 
 ```
 docker pull ciandtsoftware/memcached:acquia-latest
 ```
 
-__Run a container__
+__*Run a container*__
 
 ```
 docker run \
@@ -49,7 +49,7 @@ docker run \
   ciandtsoftware/memcached:acquia-latest
 ```
 
-__Check running containers__
+__*Check running containers*__
 
 ```
 docker ps --all
@@ -57,19 +57,7 @@ docker ps --all
 
 * * *
 
-### [Software Versions](#software-versions)
-
-These are the currently versions bundled in this image.
-
-Already installed
-
-* Ubuntu 12.04.5
-* Memcached 1.4.13
-* Dumb-init 1.2.0
-
-* * *
-
-### [Running standalone](#running-standalone)
+# [Running standalone](#running-standalone)
 
 If you just need the container there is a snippet that can help running in standalone mode.
 
@@ -102,7 +90,7 @@ Apache Memcached stats result should be returned perfectly.
 
 * * *
 
-### [Running in Docker-Compose](#running-docker-compose)
+# [Running in Docker-Compose](#running-docker-compose)
 
 Since a project is not going to use solely this container, it may need a Docker-Compose file.
 
@@ -110,7 +98,7 @@ Just to exercise, follow an example of this running with __Apache/PHP__ and also
 
 Create a new folder and fill with these 3 files and respective folders;
 
-##### [__conf/acquia.local.env__](#acquia-env)
+#### [__*conf/php.local.env*__](#php-env)
 
 ```
 ## Nginx proxy configuration
@@ -118,7 +106,7 @@ Create a new folder and fill with these 3 files and respective folders;
 VIRTUAL_HOST=mySite.local
 ```
 
-##### [__conf/memcached.local.env__](#acquia-env)
+#### [__*conf/memcached.local.env*__](#memcached-env)
 
 ```
 ## Nginx proxy configuration
@@ -127,7 +115,7 @@ VIRTUAL_HOST=myMemcached.local
 VIRTUAL_PORT=11211
 ```
 
-##### [__docker-compose.yml__](#docker-compose)
+#### [__*docker-compose.yml*__](#docker-compose)
 
 ```
 memcached:
@@ -135,10 +123,10 @@ memcached:
   container_name: memcached
   env_file: ../conf/memcached.local.env
 
-acquia:
-  build: ./acquia
-  container_name: acquia
-  env_file: ../conf/acquia.local.env
+php:
+  image: ciandtsoftware/php:acquia-latest
+  container_name: php
+  env_file: ../conf/php.local.env
   links:
     - memcached
 
@@ -171,7 +159,7 @@ Use the IP address to update __hosts__ file. Let's suppose that was 172.17.0.2.
 
 Then, add the entries to __/etc/hosts__.
 
-> 172.17.0.2 acquia.local
+> 172.17.0.2 php.local
 > 172.17.0.2 memcached.local
 
 And now, try to access in terminal
