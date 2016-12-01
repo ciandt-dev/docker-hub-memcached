@@ -260,12 +260,10 @@ First, in the master branch, is this README.MD. It explains how this little scri
 
 Second, in each image version there is an additional README.MD file that explains how to use that specific Docker image version itself. __*Latest version*__ is always the one seen on [Docker Hub page](https://hub.docker.com/r/ciandtsoftware/memcached).
 
-We strongly encourage reading it too!
+We strongly encourage reading both!
 
 * * *
 
 Happy coding, enjoy!!
 
 "We develop people before we develop software" - Cesar Gon, CEO
-
-* * *
