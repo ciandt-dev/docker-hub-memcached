@@ -64,7 +64,7 @@ If you just need the container there is a snippet that can help running in stand
 ```
 # define variables
 DOCKER_CONTAINER_NAME="myContainer"
-DOCKER_IMAGE="memcached:acquia-latest"
+DOCKER_IMAGE="ciandtsoftware/memcached:acquia-latest"
 
 # run your container
 docker run \
@@ -73,7 +73,7 @@ docker run \
   "${DOCKER_IMAGE}"
 ```
 
-After run, you can inquiry Docker service and get the IP address and port of your newly running container named __myContainer__ by using the following command:
+After run, you can inquiry Docker service and get the IP address of your newly running container named __myContainer__ by using the following command:
 
 ```
 docker inspect --format '{{ .NetworkSettings.IPAddress }} myContainer'
@@ -199,6 +199,8 @@ Second, in each image version there is an additional README.MD file that explain
 We strongly encourage reading both!
 
 * * *
+
+Please feel free to drop a message in the comments section.
 
 Happy coding, enjoy!!
 
