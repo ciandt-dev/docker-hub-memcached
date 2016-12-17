@@ -1,6 +1,6 @@
 # CI&T Memcached Docker image(s)
 
-This is the source code of [CI&T Memcached Docker image(s)](https://hub.docker.com/r/ciandtsoftware/memcached/) hosted at [Docker hub](https://hub.docker.com/).
+This is the source code of [CI&T Memcached Docker image(s)](https://hub.docker.com/r/ciandt/memcached/) hosted at [Docker hub](https://hub.docker.com/).
 
 It contents the source code for building the publicly accessible Docker image(s) and some scripts to easy maintain and update its code.
 
@@ -258,7 +258,7 @@ There are __two parts__ of the documentation.
 
 First, in the master branch, is this README.MD. It explains how this little scripts framework work and it is published on [Github page](https://github.com/ciandt-dev/docker-hub-memcached).
 
-Second, in each image version there is an additional README.MD file that explains how to use that specific Docker image version itself. __*Latest version*__ is always the one seen on [Docker Hub page](https://hub.docker.com/r/ciandtsoftware/memcached).
+Second, in each image version there is an additional README.MD file that explains how to use that specific Docker image version itself. __*Latest version*__ is always the one seen on [Docker Hub page](https://hub.docker.com/r/ciandt/memcached).
 
 We strongly encourage reading both!
 
